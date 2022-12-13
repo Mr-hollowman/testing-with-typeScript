@@ -18,6 +18,12 @@ describe("application component", () => {
     const element = screen.getByRole("textbox",{
       name:"Name"
     })
+
+    const nameElement = screen.getByLabelText("Name",{
+      selector:"input"
+    })
+    expect(nameElement).toBeInTheDocument()
+
     expect(element).toBeInTheDocument()
 
     const textArea = screen.getByRole("textbox",{
@@ -30,6 +36,9 @@ describe("application component", () => {
 
     const checkbox = screen.getByRole("checkbox")
     expect(checkbox).toBeInTheDocument()
+
+    const checkbox2  = screen.getByLabelText("I agree to the conditions");
+    expect(checkbox2).toBeInTheDocument()
 
     const button = screen.getByRole("button");
     expect(button).toBeInTheDocument()
