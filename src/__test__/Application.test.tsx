@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import { Application } from "../components/greet/application/Application";
+import { Application } from "../components/application/Application";
 
 describe("application component", () => {
   test("render correctly", () => {
