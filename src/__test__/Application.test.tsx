@@ -15,18 +15,21 @@ describe("application component", () => {
     })
     expect(secondHeading).toBeInTheDocument() 
 
-    const element = screen.getByRole("textbox",{
+    const nameElement = screen.getByRole("textbox",{
       name:"Name"
-    })
-    expect(element).toBeInTheDocument()
-
-    const nameElement = screen.getByLabelText("Name",{
-      selector:"input"
     })
     expect(nameElement).toBeInTheDocument()
 
-    const namePlaceholder = screen.getByPlaceholderText("fullName")
-    expect(namePlaceholder).toBeInTheDocument()
+    const nameElement2 = screen.getByLabelText("Name",{
+      selector:"input"
+    })
+    expect(nameElement2).toBeInTheDocument()
+
+    const nameElement3 = screen.getByPlaceholderText("fullName")
+    expect(nameElement3).toBeInTheDocument()
+
+    const nameElement4 = screen.getByDisplayValue("selva")
+    expect(nameElement4).toBeInTheDocument()
 
     const textArea = screen.getByRole("textbox",{
       name:"Bio"
