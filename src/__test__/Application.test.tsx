@@ -31,6 +31,9 @@ describe("application component", () => {
     const nameElement4 = screen.getByDisplayValue("selva")
     expect(nameElement4).toBeInTheDocument()
 
+    const image = screen.getByAltText("test for image")
+    expect(image).toBeInTheDocument()
+
     const textArea = screen.getByRole("textbox",{
       name:"Bio"
     })

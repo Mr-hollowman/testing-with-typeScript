@@ -4,6 +4,7 @@ export const Application = () => {
       <h1>Application form</h1>
       <h2>Fill this form</h2>
       <p>All fields are mandatory</p>
+      <img src="./chumma.png" alt="test for image" />
       <form>
         <div>
           <label htmlFor="name">Name</label>
