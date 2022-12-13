@@ -4,12 +4,33 @@ import { Application } from "../components/greet/application/Application";
 describe("application component", () => {
   test("render correctly", () => {
     render(<Application />);
-    const element = screen.getByRole("textbox")
+
+    const mainHeading = screen.getByRole("heading",{
+      level: 1,
+    })
+    expect(mainHeading).toBeInTheDocument();
+
+    const secondHeading = screen.getByRole("heading",{
+      level:2
+    })
+    expect(secondHeading).toBeInTheDocument() 
+
+    const element = screen.getByRole("textbox",{
+      name:"Name"
+    })
     expect(element).toBeInTheDocument()
+
+    const textArea = screen.getByRole("textbox",{
+      name:"Bio"
+    })
+    expect(textArea).toBeInTheDocument()
+
     const selectElement = screen.getByRole("combobox");
     expect(selectElement).toBeInTheDocument();
+
     const checkbox = screen.getByRole("checkbox")
     expect(checkbox).toBeInTheDocument()
+
     const button = screen.getByRole("button");
     expect(button).toBeInTheDocument()
   });
