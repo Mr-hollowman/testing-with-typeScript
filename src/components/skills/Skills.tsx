@@ -5,7 +5,7 @@ export const Skills = (props: SkillsProps) => {
   return (
     <>
       <ul>
-        {skills.map((skill) => {
+        {skills && skills.map((skill) => {
           return <li key={skill}>skill</li>;
         })}
       </ul>
