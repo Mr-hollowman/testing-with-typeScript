@@ -18,18 +18,23 @@ describe("application component", () => {
     const element = screen.getByRole("textbox",{
       name:"Name"
     })
+    expect(element).toBeInTheDocument()
 
     const nameElement = screen.getByLabelText("Name",{
       selector:"input"
     })
     expect(nameElement).toBeInTheDocument()
 
-    expect(element).toBeInTheDocument()
+    const namePlaceholder = screen.getByPlaceholderText("fullName")
+    expect(namePlaceholder).toBeInTheDocument()
 
     const textArea = screen.getByRole("textbox",{
       name:"Bio"
     })
     expect(textArea).toBeInTheDocument()
+
+    const paragraphElement = screen.getByText("All fields are mandatory")
+    expect(paragraphElement).toBeInTheDocument()
 
     const selectElement = screen.getByRole("combobox");
     expect(selectElement).toBeInTheDocument();
