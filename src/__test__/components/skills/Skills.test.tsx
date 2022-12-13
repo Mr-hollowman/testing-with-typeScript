@@ -32,4 +32,12 @@ describe("renders correctly",()=>{
         expect(startLearning).not.toBeInTheDocument()
     })
 
+    test("testing the button element", async ()=>{
+        render(<Skills />)
+        const startLearning = await screen.findByRole("button", {
+            name:"Start Learning"
+        })
+        expect(startLearning).toBeInTheDocument()
+    })
+
 })
