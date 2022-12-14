@@ -49,6 +49,21 @@ describe("counter component",()=>{
             level:1
         })
         expect(counter).toHaveTextContent("10")
+    })
 
+    test("renders correctly when the focus",()=>{
+        render(<Counter />)
+        const incrementButton = screen.getByRole("button",{name:"Increment"})
+        user.tab()
+        expect(incrementButton).toHaveFocus()
+
+        // const inputElement = screen.getByRole("spinbutton")
+        // user.tab()
+        // expect(inputElement).toHaveFocus()
+
+
+        // const setButton = screen.getByRole("button", {name:"Set"})
+        // user.tab()
+        // expect(setButton).toHaveFocus() 
     })
 })
