@@ -27,4 +27,9 @@ describe("Users component", ()=>{
         const error = await screen.findByText("error fetching users")
         expect(error).toBeInTheDocument()
     })
+
+    test("snapshot testing", ()=>{
+        const {container} = render(<Users />)
+        expect(container).toMatchSnapshot()
+    })
 })
